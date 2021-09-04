@@ -25,8 +25,9 @@ public class Hello {
     }
 
     // below code would normally cause checkstyle fail - MultipleVariableDeclarations
-    // to stop checkstyle failing our build for this, we can add a SuppressWarnings like below
+    // to stop checkstyle failing our build for this, we can add a SuppressWarnings like below choice of the
     @SuppressWarnings("MultipleVariableDeclarations")
+    //@SuppressWarnings("checkstyle:MultipleVariableDeclarations")  // prefixing with checkstyle: will work too
     public void exampleOfSuppression(){
         String hello="hello", goodBye="good-bye";
         System.out.println(hello + " and "+goodBye);
