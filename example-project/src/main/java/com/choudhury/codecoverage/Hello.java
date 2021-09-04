@@ -1,5 +1,7 @@
 package com.choudhury.codecoverage;
 
+//below unused import should trigger checkstyle to fail build
+
 import java.util.ArrayList;
 
 public class Hello {
@@ -8,6 +10,7 @@ public class Hello {
         System.out.println("Constructor line covered");
     }
 
+    // left brace on the next line should cause checkstyle to fail build
     public String sayHello(final String lang)
     {
         System.out.println("sayHello called");
@@ -19,5 +22,13 @@ public class Hello {
         }
         System.out.println(message);
         return message;
+    }
+
+    // below code would normally cause checkstyle fail - MultipleVariableDeclarations
+    // to stop checkstyle failing our build for this, we can add a SuppressWarnings like below
+    @SuppressWarnings("MultipleVariableDeclarations")
+    public void exampleOfSuppression(){
+        String hello="hello", goodBye="good-bye";
+        System.out.println(hello + " and "+goodBye);
     }
 }

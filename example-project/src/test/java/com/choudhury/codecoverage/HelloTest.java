@@ -1,12 +1,13 @@
 package com.choudhury.codecoverage;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class HelloTest {
     @Test
     public void testHello() throws Exception{
         Hello hello=new Hello();
-        Assert.assertEquals("Hello",hello.sayHello("en"));
+        Assertions.assertEquals("Hello",hello.sayHello("en"));
     }
 }
